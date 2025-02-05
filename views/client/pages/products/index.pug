@@ -7,13 +7,14 @@ block main
         +box-head("Trang danh sách dản phẩm")
 
       .row 
-        .col-4.mb-3 
-          .product-item 
-            .inner-image 
-              img(src="https://product.hstatic.net/1000313927/product/mizuno_alpha_pro_as_-_xanh_bien_1_9504d8b17e9f45db9acb1f3f28d232f3.jpg", alt="Mizuno")
-            .inner-content 
-              h3.inner-title Giày Mizuno 
-              .inner-price-new 100$
-              .inner-price-old 150$
-              .inner-discount -30%
+        each item in products
+          .col-4.mb-3 
+            .product-item 
+              .inner-image 
+                img(src=item.thumbnail, alt=item.title)
+              .inner-content 
+                h3.inner-title #{item.title} 
+                .inner-price-new #{item.priceNew}$
+                .inner-price-old #{item.price}$
+                .inner-discount #{item.discountPercentage}%
 
